@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_livelink_inter_company_inherit_form">
+            <field name="name">res.company.form.inherit</field>
+            <field name="inherit_id" ref="inter_company_rules.view_company_inter_change_inherit_form"/>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <field name="auto_validation" position="after">
+                    <field name="auto_propagate_serials" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

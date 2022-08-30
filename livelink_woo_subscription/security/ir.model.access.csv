@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_subscription_partner_type,sale_subscription_partner_type,model_sale_subscription_partner_type,base.group_user,1,1,1,1
+access_sale_subscription_app,sale_subscription_app,model_sale_subscription_app,base.group_user,1,1,1,1
+access_aws_subscription_history,aws_subscription_history,model_aws_subscription_history,base.group_user,1,1,1,1

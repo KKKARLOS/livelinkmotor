@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<odoo>
+        <record id="view_locate_subscription_form" model="ir.ui.view">
+            <field name="name">locate.subscription.form</field>
+            <field name="model">locate.subscription</field>
+            <field name="arch" type="xml">
+                <form string="Locate subscription">
+                    <group>
+                        <field name="lines" nolabel='1'>
+                            <tree create="0" delete="0"  editable="bottom">
+                                <field name="seq" widget="handle"/>
+                                <field name="name_product_subs" />
+                                <field name="description_sale_subs" />
+                                <field name="aws_subs_id" domain="[('state', '=', 'validated')]"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="action_assign_service" string="Assign" type="object" class="btn-primary"
+                                attrs="{'readonly':[('lines', '=', False)]}"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_start_service" model="ir.actions.act_window">
+            <field name="name">Assign</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">locate.subscription</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_locate_subscription_form"/>
+            <field name="target">new</field>
+        </record>
+</odoo>

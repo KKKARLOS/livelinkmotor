@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="device_test_view_form" model="ir.ui.view">
+           <field name="name">device.test.view.form</field>
+           <field name="model">aws.device.test</field>
+           <field name="arch" type="xml">
+               <form string="Device Test">
+                   <sheet>
+                       <group>
+                           <group>
+                               <field name="name"/>
+                               <field name="testCaseId"/>
+                           </group>
+                           <group>
+                               <field name="testedOn"/>
+                               <field name="device_id"/>
+                           </group>
+                       </group>
+                       <group>
+                            <group>
+                                <field name="GPRS"/>
+                                <field name="FTPS"/>
+                                <field name="GPS"/>
+                                <field name="IMU"/>
+                                <field name="iccid"/>
+                                <field name="memory"/>
+                                <field name="battery"/>
+                                <field name="status"/>
+                            </group>
+                            <group>
+                                <label for="scoreGPRS">%</label>
+                                <div class="o_row">
+                                    <field name="scoreGPRS"/><span>%%</span>
+                                </div>
+                                <label for="scoreFTPS">%</label>
+                                <div class="o_row">
+                                    <field name="scoreFTPS"/><span>%%</span>
+                                </div>
+                                <label for="scoreGPS">%</label>
+                                <div class="o_row">
+                                    <field name="scoreGPS"/><span>%%</span>
+                                </div>
+                                <label for="scoreIMU">%</label>
+                                <div class="o_row">
+                                    <field name="scoreIMU"/><span>%%</span>
+                                </div>
+                                <label for="iccidScore">%</label>
+                                <div class="o_row">
+                                    <field name="iccidScore"/><span>%%</span>
+                                </div>
+                                <label for="scoreMemory">%</label>
+                                <div class="o_row">
+                                    <field name="scoreMemory"/><span>%%</span>
+                                </div>
+                                <label for="scoreBattery">%</label>
+                                <div class="o_row">
+                                    <field name="scoreBattery"/><span>%%</span>
+                                </div>
+                                <label for="totalScore">%</label>
+                                <div class="o_row">
+                                    <field name="totalScore"/><span>%%</span>
+                                </div>
+
+                            </group>
+                       </group>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+        <record id="device_test_view_tree" model="ir.ui.view">
+            <field name="name">device.test.view.tree</field>
+            <field name="model">aws.device.test</field>
+            <field name="arch" type="xml">
+                <tree string="Device Test">
+                 <field name="name"/>
+                 <field name="device_id"/>
+                 <field name="testedOn"/>
+                 <field name="testCaseId"/>
+                 <field name="GPRS"/>
+                 <field name="FTPS"/>
+                 <field name="GPS"/>
+                 <field name="IMU"/>
+                 <field name="iccid"/>
+                 <field name="memory"/>
+                 <field name="battery"/>
+                 <field name="status"/>
+                 <field name="scoreGPRS" string="sGPRS(%)"/>
+                 <field name="scoreFTPS" string="sFTPS(%)"/>
+                 <field name="scoreGPS" string="sGPS(%)"/>
+                 <field name="scoreIMU" string="sIMU(%)"/>
+                 <field name="iccidScore" string="sICCid(%)"/>
+                 <field name="scoreMemory" string="sMem(%)"/>
+                 <field name="scoreBattery" string="sBat(%)"/>
+                 <field name="totalScore" string="Total(%)"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="action_aws_device_test" model="ir.actions.act_window">
+        <field name="name">Device Test</field>
+        <field name="res_model">aws.device.test</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="device_test_view_tree"/>
+        <field name="domain"></field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No device test to show.
+            </p>
+        </field>
+    </record>
+
+    </data>
+</odoo>

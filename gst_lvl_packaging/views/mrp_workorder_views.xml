@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mrp_workorder_view_form_inherit_gst_new" model="ir.ui.view">
+        <field name="name">mrp.workorder.view.form.inherit.gst.new</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp_workorder.mrp_workorder_view_form_tablet"/>
+        <field name="arch" type="xml">
+            <field name="current_quality_check_id" position="after">
+                <field name="print_label" invisible="1" />
+                <field name="print_qr" invisible="1" />
+                <field name="do_return" invisible="1" />
+                <field name="is_rieju" invisible="1" />
+            </field>
+            <button name="record_production" position="before">
+
+                    <button name="button_print_serial_rieju" type="object" attrs="{'invisible': [ '!', '&amp;',('is_last_step', '=', True), ('is_rieju', '=', True)]}" string="PACK RIEJU" barcode_trigger="record" class="btn-primary"/>
+                    <button name="button_print_serial_number" type="object" attrs="{'invisible': [ '!', '&amp;',('is_last_step', '=', True), ('product_id', '==', 1890)]}" string="PACK SOY" barcode_trigger="record" class="btn-primary"/>
+
+                    <button name="button_print_qr" type="object" attrs="{'invisible': [ '!', '&amp;',('is_last_step', '=', True), ('print_qr', '=', True)]}" string="Print QR" barcode_trigger="record" class="btn-primary"/>
+            </button>
+            <!--  -->
+            <button name="record_production" position="before">
+                <button name="button_do_return"
+                        type="object"
+                        attrs="{'invisible': [('do_return', '!=', True)]}"
+                        string="VOLVER"
+                        barcode_trigger="record"
+                        class="btn-primary"/>
+            </button>
+        </field>
+    </record>
+
+    <record id="mrp_production_workorder_form_view_inherit_button_packsoy" model="ir.ui.view">
+        <field name="name">mrp.workorder.view.form.inherit.workorder.button.packsoy</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp_workorder.mrp_workorder_view_form_inherit_workorder"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='result']" position="after">
+                <field name="product_id" invisible = '1'/>
+                <field name="lot_id" invisible = '1'/>
+                <button name="button_print_rieju" 
+                        attrs="{'invisible': ['|',('parent.is_rieju', '!=', True),('finished_lot_id', '=', False)]}"
+                        string="Format RIEJU" type="object" barcode_trigger="record" class="btn-primary"/>
+                        <!-- '|', ('product_id', '!=', 1890),  -->
+                <button name="button_print_serial_number_finished" 
+                        attrs="{'invisible': [('finished_lot_id', '=', False)]}"  
+                        string="Nº DE SERIE" type="object" barcode_trigger="record" class="btn-primary"/>
+                <button name="button_print_label"
+                        attrs="{'invisible': [('finished_lot_id', '=', False)]}"
+                        string="Codigo Barras" type="object" barcode_trigger="record" sltyle="margin-right;2px" class="btn-primary"/>
+                <button name="button_print_qr_finished" attrs="{'invisible': [('finished_lot_id', '=', False)]}" string="CÓDIGO QR" type="object" barcode_trigger="record" sltyle="margin-right;2px" class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

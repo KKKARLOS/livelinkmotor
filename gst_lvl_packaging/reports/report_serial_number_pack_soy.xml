@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+     <template id="label_print_serial_number">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="row">
+                    <div class="col-12">
+                        <p t-field="docs.last_finished_lot_id" style="margin: auto !important; text-align: center; font-size: 100px;"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

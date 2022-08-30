@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="stock_picking_form_view" model="ir.ui.view">
+        <field name="name">stock.picking.form.view</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <field name="origin" position="after">
+                <field name="is_intercompany" invisible='1' />
+                <field name="has_virtual_serials" invisible='1' />
+            </field>
+            <button name="action_confirm" position="after">
+                <button name="action_fill_suggesteds" string="Rellenar" type="object" class="oe_highlight" 
+                    attrs="{'invisible': ['|', ('show_validate', '=', False), ('has_virtual_serials', '&lt;', 1)]}"/>
+            </button>
+            <button name="action_show_details" position="after">
+                <button name="action_view_validate_serials" icon="fa-table" width="0.1" type="object"
+                    attrs="{'invisible': [('parent.is_intercompany', '=', False)]}"
+                    string="Register intercompany lots" options="{&quot;warn&quot;: true}" />
+                <field name="count_virtual_serials" attrs="{'invisible': ['|', ('product_uom_qty', '=', 'qty_done'), ('parent.is_intercompany', '=', False)]}"/>
+            </button>
+        </field>
+    </record>
+
+</odoo>

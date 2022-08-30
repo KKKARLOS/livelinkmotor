@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="product_product_serial_imei" model="product.product">
+			<field name="name">DEVICE IMEI</field>
+			<field name="default_code">DEV_IMEI</field>
+			<field name="categ_id" ref="product.product_category_all"/>
+			<field name="type">product</field>
+			<field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+			<field name="tracking">serial</field>
+		</record>
+        <record id="product_product_serial_macid" model="product.product">
+			<field name="name">KEY MACID</field>
+			<field name="default_code">KEY_SERIAL</field>
+			<field name="categ_id" ref="product.product_category_all"/>
+			<field name="type">product</field>
+			<field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+			<field name="tracking">serial</field>
+		</record>
+        <record id="product_product_device_imei" model="product.product">
+			<field name="name">DEVICE KOMOBI</field>
+			<field name="default_code">DEV_READY</field>
+			<field name="categ_id" ref="product.product_category_all"/>
+			<field name="type">product</field>
+			<field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+			<field name="tracking">serial</field>
+		</record>
+        <record id="product_product_device_macid" model="product.product">
+			<field name="name">AWS KEY MACID</field>
+			<field name="default_code">KEY_MACID</field>
+			<field name="categ_id" ref="product.product_category_all"/>
+			<field name="type">product</field>
+			<field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+			<field name="tracking">serial</field>
+		</record>
+
+    </data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+     <record id="paperformat_serial_number" model="report.paperformat">
+        <field name="name">Report Label serial number Paperformat</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">11</field>
+        <field name="page_width">50</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">300</field>
+    </record>
+
+    <report id="report_label_serial_number"
+            model="mrp.workorder"
+            string="PACKSOY"
+            name="gst_lvl_packaging.label_print_serial_number"
+            file="gst_lvl_packaging.label_print_serial_number"
+            report_type="qweb-pdf"
+            paperformat="paperformat_serial_number"
+    />
+
+</odoo>
+

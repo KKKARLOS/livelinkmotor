@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Modification to base template odoo send notificaton for Livelink -->
+    <template id="gst_lvl_report_mail_notification_paynow_inherit"
+              inherit_id="mail.mail_notification_paynow">
+
+        <!-- HEADER - Replace company logo with KOMOBI custom logo -->
+        <xpath expr="/t/table/tr/td/table/tbody/tr//td[2]" position="replace">
+            <td valign="middle" align="right">
+                <img class="img-fluid o_we_custom_image"
+                     src="/web/image/2174/imagotipo-gris%2Bverde.png"
+                     style="border-style:none;height:auto;max-width:100%;vertical-align:middle;"/>
+            </td>
+        </xpath>
+
+        <!-- CONTENT -->
+        <xpath expr="/t/table/tr[1]/td[1]/table/tbody/tr[2]/td/div" position="replace"/>
+        <xpath expr="/t/table/tr[1]/td[1]/table/tbody/tr[2]/td/t[2]" position="replace"/>
+
+        <!-- FOOTER - Replace company's data with KOMOBI's data -->
+        <xpath expr="/t/table//tr[3]" position="replace">
+            <td style="padding: 0; font-size:11px;">
+                <hr width="100%"
+                    style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 32px 0px 4px 0px;"/>
+                <b>KOMOBI MOTO</b>
+                <br></br>
+                <div style="color: #999999">
+                    <a style="text-decoration:none; color: #999999;">+34
+                        693048496
+                    </a>
+                    <a style="text-decoration:none; color: #999999;">
+                        info@komobimoto.com
+                    </a>
+                    <a style="text-decoration:none; color: #999999;">
+                        www.komobimoto.com
+                    </a>
+                </div>
+            </td>
+        </xpath>
+
+        <!-- Ditchs powered by Odoo -->
+        <xpath expr="/t/table/tr[2]" position="replace" />
+    </template>
+
+</odoo>

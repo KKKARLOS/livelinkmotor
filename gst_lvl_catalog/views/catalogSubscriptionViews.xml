@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view-->
+    <record id="view_catalog_subscription_tree" model="ir.ui.view">
+        <field name="name">view.catalog.subscription.tree</field>
+        <field name="model">catalog.subscription</field>
+        <field name="arch" type="xml">
+                 <tree string="Catalogo Subscripciones">
+                    <field name="name"/>
+                    <field name="meses"/>
+                </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="view_catalog_subscription_form" model="ir.ui.view">
+        <field name="name">view.catalog.subscription.form</field>
+        <field name="model">catalog.subscription</field>
+        <field name="arch" type="xml">
+            <form string="Catalogo Subscripciones">
+                <sheet>
+                    <group>
+                        <group string="Nombre">
+                            <h1><field name="name" required="1"/></h1>
+                        </group>
+                    </group>
+                        <group>
+                            <group>
+                                <field name="aux_type" invisible="1"/>
+                                <field name="meses" attrs="{'invisible':['|',['aux_type','==','perm'],['aux_type','==','app']], 'required':[['aux_type','==','tmp']]}"/>
+                                <field name="subscription_type"/>
+                                <field name="service_id" />
+                            </group>
+
+                        </group>
+                    <notebook>
+                        <page string="Suscripciones" name="suscripciones">
+                            <field name="subscriptions_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gst_lvl_catalog.catalog_subscription_view">
+        <field name="name">Catalogo de subscripciones</field>
+        <field name="res_model">catalog.subscription</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Catalogo Subscripciones" parent="sale.product_menu_catalog" sequence="10" id="lunch_catalog_subscriptions_menu" action="gst_lvl_catalog.catalog_subscription_view" />
+
+
+
+</odoo>

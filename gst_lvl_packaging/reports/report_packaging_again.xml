@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="label_report_packaging_template_view_pdf_again">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div style="font-size: 55px; margin: 0 !important; padding: 0 !important">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p><span><strong>KOMOBI</strong></span></p> 
+                                    <p style="margin: 0 !important; padding: 0px !important;"><span>Designed by Komobi Moto</span></p>
+                                    <p style="margin: 0 !important; padding: 0px !important;"><span>Assembled in Spain</span></p>
+                                    <p>MAC:<span t-esc='docs.get_mac()'/></p>
+                                    <div class="imagen-codigo-barras-1">
+                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', docs.get_imei(), 800, 180)"
+                                             style="display:inline-block; margin: 20px 0 0 -100px; padding: 0; text-align: left; width: 100%;"
+                                             alt="Barcode"/>
+                                    </div>
+                                    <p>IMEI:<span t-esc='docs.get_imei()'/></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-12 imagen-codigo-barras-2" style="margin: 1rem !important; padding: 3rem 0 !important">
+                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', docs.finished_lot_id.name, 800, 300)"
+                                         style="display:block; margin: 0 0 30px -70px; padding: 0; width: 115%;"
+                                         alt="Barcode"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center" style="margin: 1rem 0 0">
+                                   <!-- -->
+                                    <p> <span t-field='docs.product_id.language'/> - Serial No. <span t-field='docs.finished_lot_id'/></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,68 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* livelink_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-04 19:09+0000\n"
+"PO-Revision-Date: 2022-03-04 19:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: livelink_hr
+#: model:ir.ui.menu,name:livelink_hr.menu_hr_attendance_view_attendances_my_own_only
+msgid "My Attendances"
+msgstr "Mis Asistencias"
+
+#. module: livelink_hr
+#: model:ir.model,name:livelink_hr.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato de empleado"
+
+#. module: livelink_hr
+#: model_terms:ir.ui.view,arch_db:livelink_hr.view_attendance_tree_inherit_my_own_only
+msgid "Employee attendances"
+msgstr "Asistencias del empleado"
+
+#. module: livelink_hr
+#: model:hr.leave.type,name:livelink_hr.hr_leave_type_holidays
+msgid "Holidays"
+msgstr "Vacaciones"
+
+#. module: livelink_hr
+#: model:ir.actions.server,name:livelink_hr.ir_cron_holidays_generator_ir_actions_server
+#: model:ir.cron,cron_name:livelink_hr.ir_cron_holidays_generator
+#: model:ir.cron,name:livelink_hr.ir_cron_holidays_generator
+msgid "Holidays generator"
+msgstr ""
+
+#. module: livelink_hr
+#: model:ir.actions.act_window,name:livelink_hr.hr_attendance_action_my_own_only
+msgid "My Attendances"
+msgstr "Mis Asistencias"
+
+#. module: livelink_hr
+#: model_terms:ir.actions.act_window,help:livelink_hr.hr_attendance_action_my_own_only
+msgid "No attendance records found"
+msgstr "No se encontraron registros de asistencia"
+
+#. module: livelink_hr
+#: model_terms:ir.actions.act_window,help:livelink_hr.hr_attendance_action_my_own_only
+msgid "The attendance records of your employees will be displayed here."
+msgstr "Los registros de asistencia de sus empleados se mostrarán aquí."
+
+#. module: livelink_hr
+#: model:ir.ui.menu,name:livelink_hr.menu_hr_attendance_manage_attendances_my_own_only
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: livelink_hr
+#: model_terms:ir.ui.view,arch_db:livelink_hr.view_attendance_tree_inherit_my_own_only
+msgid "Work Hours"
+msgstr "Horas laborales"

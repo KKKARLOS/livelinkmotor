@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+     <template id="qr_again_template">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="row">
+                    <div class="col-12" style="margin: 0; padding: 0;">
+                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', docs.get_imei_mac_qr_format(), 370,370)" style="margin: 2px !important;" alt="Barcode"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

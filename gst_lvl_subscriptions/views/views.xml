@@ -1,0 +1,87 @@
+<odoo>
+  <data>
+    <!-- Tree View -->
+    <record model="ir.ui.view" id="view_aws_subscriptions_tree">
+      <field name="name">view.aws.subscriptions.tree</field>
+      <field name="model">aws.subscriptions</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="serial_number"/>
+          <field name="imei1"/>
+          <field name="mac1"/>
+
+        </tree>
+      </field>
+    </record>
+
+      <!-- Form View -->
+    <record model="ir.ui.view" id="view_aws_subscriptions_form">
+      <field name="name">view.aws.subscriptions.form</field>
+      <field name="model">aws.subscriptions</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group><group><field name="name" placeholder="Nombre"/>
+              <field name="serial_number" domain="['&amp;',['key_id','=',False],['device_id','=',False]]"/></group></group>
+            <group name="fist">
+              <group name="second">
+                <field name="imei1"/>
+                <field name="mac1"/>
+                <field name="iccid"/>
+                <field name="num_pedido"/>
+                <field name="type_client"/>
+              </group>
+              <group name="third">
+                <field name="product"/>
+                <field name="efectiv_date"/>
+                <field name="aws_firmware"/>
+                <field name="instalation_date"/>
+                <field name="user_email"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Datos Compra">
+                <group>
+                  <group>
+                    <field name="client_id"/>
+                    <field name="direct_fact"/>
+                    <field name="direct_ent"/>
+                    <field name="fecha_pedido"/>
+                  </group>
+                </group>
+              </page>
+              <page string="Historial">
+                <field name="historial"/>
+              </page>
+              <page string="Servicios">
+                <field name="services_line"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Secuences -->
+    <record id="sequence_references" model="ir.sequence">
+      <field name="name">Secuencia Referencias</field>
+      <field name="code">task.1fpv</field>
+      <field name="active">TRUE</field>
+      <field name="prefix">REF</field>
+      <field name="padding">5</field>
+      <field name="number_next">1</field>
+      <field name="number_increment">1</field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="gst_lvl_subscriptions.subscriptions_views">
+      <field name="name">Referencias</field>
+      <field name="res_model">aws.subscriptions</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Referencias" id="lunch_subscriptions_menu" parent="gst_lvl_connector_aws.aws_connector_root"
+              action="gst_lvl_subscriptions.subscriptions_views"/>
+  </data>
+</odoo>

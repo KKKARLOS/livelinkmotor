@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="key_view_form" model="ir.ui.view">
+           <field name="name">key.view.form</field>
+           <field name="model">aws.key</field>
+           <field name="arch" type="xml">
+               <form string="Key">
+                   <sheet>
+                       <group>
+                           <group>
+                               <field name="keyPcbId"/>
+                               <field name="macid" invisible='1'/>
+								<field name="mac_id"/>
+                           </group>
+                           <group>
+                               <field name="assembledOn"/>
+                               <field name="status"/>
+                           </group>
+                       </group>
+                       <group>
+                            <group>
+                                <field name="ADC"/>
+                                <field name="FLASH"/>
+                                <field name="ACCEL"/>
+                                <field name="INTR"/>
+                                <field name="CARGA"/>
+                                <field name="BT"/>
+                                <field name="OFF"/>
+                            </group>
+                            <group>
+                                <label for="scoreADC">%</label>
+                                <div class="o_row">
+                                    <field name="scoreADC"/><span>%%</span>
+                                </div>
+                                <label for="scoreFLASH">%</label>
+                                <div class="o_row">
+                                    <field name="scoreFLASH"/><span>%%</span>
+                                </div>
+                                <label for="scoreACCEL">%</label>
+                                <div class="o_row">
+                                    <field name="scoreACCEL"/><span>%%</span>
+                                </div>
+                                <label for="scoreINTR">%</label>
+                                <div class="o_row">
+                                    <field name="scoreINTR"/><span>%%</span>
+                                </div>
+                                <label for="scoreCARGA">%</label>
+                                <div class="o_row">
+                                    <field name="scoreCARGA"/><span>%%</span>
+                                </div>
+                                <label for="scoreBT">%</label>
+                                <div class="o_row">
+                                    <field name="scoreBT"/><span>%%</span>
+                                </div>
+                                <label for="scoreOFF">%</label>
+                                <div class="o_row">
+                                    <field name="scoreOFF"/><span>%%</span>
+                                </div>
+                                <label for="totalScore">%</label>
+                                <div class="o_row">
+                                    <field name="totalScore"/><span>%%</span>
+                                </div>
+                            </group>
+                       </group>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+        <record id="key_view_tree" model="ir.ui.view">
+            <field name="name">key.view.tree</field>
+            <field name="model">aws.key</field>
+            <field name="arch" type="xml">
+                <tree string="Key" decoration-danger="status != 'OK'">
+                    <field name="keyPcbId"/>
+                    <field name="macid"/>
+                    <field name="assembledOn"/>
+                    <field name="status"/>
+                    <field name="ADC"/>
+                    <field name="FLASH"/>
+                    <field name="ACCEL"/>
+                    <field name="INTR"/>
+                    <field name="CARGA"/>
+                    <field name="BT"/>
+                    <field name="scoreADC" string="scoreADC (%)"/>
+                    <field name="scoreFLASH" string="scoreFLASH (%)"/>
+                    <field name="scoreACCEL" string="scoreACCEL (%)"/>
+                    <field name="scoreINTR" string="scoreINTR (%)"/>
+                    <field name="scoreCARGA" string="scoreCARGA (%)"/>
+                    <field name="scoreBT" string="scoreBT (%)"/>
+                    <field name="totalScore" string="totalScore (%)"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_aws_key" model="ir.actions.act_window">
+            <field name="name">Key</field>
+            <field name="res_model">aws.key</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="key_view_tree"/>
+            <field name="domain"></field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No keys to show.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

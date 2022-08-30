@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="label_qr_fabrication_lot_imei_template_view_pdf">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-foreach="docs" t-as="lot_id">
+                    <t t-set="imei" t-value="lot_id.name if lot_id.device_id else 'imei not defined'"/>
+                    <div class="row">
+                        <div class="col-12" style="margin: 0; padding: 0">
+                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', imei, 220, 220)" style="margin-left: -5px; margin-top: 0 !important" alt="Barcode"/>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <template id="label_qr_fabrication_lot_mac_template_view_pdf">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-foreach="docs" t-as="lot_id">
+                    <t t-set="mac" t-value="lot_id.key_id.name if lot_id.key_id else 'mac not defined'"/>
+                    <div class="row">
+                        <div class="col-12" style="margin: 0; padding: 0">
+                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', mac, 220, 220)" style="margin-left: -5px; margin-top: 0 !important" alt="Barcode"/>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <template id="label_qr_fabrication_lot_imei_mac_template_view_pdf">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-set="imei" t-value="0"/>
+                <t t-set="mac" t-value="0"/>
+                <t t-foreach="docs" t-as="picking">
+                    <t t-foreach="picking.move_lines" t-as="move">
+                        <t t-foreach="move.move_line_ids" t-as="move_line">
+                            <!-- <t t-if="move_line.product_id.tracking != 'none' and 'DEV' in move_line.product_id.default_code"> -->
+                            <t t-if="move_line.product_id.tracking != 'none' and move_line.lot_id and move_line.lot_id.is_device">
+                                <t t-set="imei" t-value="move_line.lot_id and move_line.lot_id.name or 'not defined'"/>
+                            </t>
+                            <!-- <t t-if="move_line.product_id.tracking != 'none' and 'KEY' in move_line.product_id.default_code"> -->
+                             <t t-if="move_line.product_id.tracking != 'none' and move_line.lot_id and move_line.lot_id.is_mac">
+                                <t t-set="mac" t-value="move_line.lot_id and move_line.lot_id.name or 'not defined'"/>
+                            </t>
+                        </t>
+                    </t>
+                </t>
+                <t t-if="imei and mac">
+                    <t t-set="imei_plus_mac" t-value="imei+';'+mac"/>
+                </t>
+
+                <t t-if="imei and not mac">
+                    <t t-set="imei_plus_mac" t-value="imei+';'"/>
+                </t>
+
+                <t t-if="not imei and mac">
+                    <t t-set="imei_plus_mac" t-value="';'+mac"/>
+                </t>
+
+                <div class="row">
+                    <div class="col-12" style="margin: 0; padding: 0;">
+                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', imei_plus_mac, 370,370)" alt="Barcode"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

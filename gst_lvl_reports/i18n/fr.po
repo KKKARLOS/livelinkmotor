@@ -1,0 +1,343 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gst_lvl_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-27 08:32+0000\n"
+"PO-Revision-Date: 2021-10-27 11:22+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid ""
+"&amp;nbsp;\n"
+"                                                        <span>on</span>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.actions.report,print_report_name:gst_lvl_reports.report_account_move_komobi
+msgid "(object._get_report_base_filename())"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.gst_lvl_report_mail_notification_paynow_inherit
+msgid ""
+"+34\n"
+"                        693048496"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.gst_lvl_report_mail_notification_paynow_inherit
+msgid ""
+"<b>KOMOBI MOTO</b>\n"
+"                <br/>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Montant</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">Precio total</span>"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.label_report_packaging_template_view_pdf
+msgid "<span><strong>KOMOBI</strong></span>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.label_report_packaging_template_view_pdf
+msgid "<span>Assembled in Spain</span>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.label_report_packaging_template_view_pdf
+msgid "<span>Designed by Komobi Moto</span>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "<span>Disc.%</span>"
+msgstr "<span>Desc.%</span>"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.external_layout_standard_2
+msgid "<span>LIVELINK VENTURES S.L.,</span>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "<span>Product</span>"
+msgstr "<span>Produit</span>"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "<span>Quantity</span>"
+msgstr "<span>Quantité</span>"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "<span>Source Document</span>"
+msgstr "<span>Documento de Origen</span>"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "<span>Unit Price</span>"
+msgstr "<span>Prix unité</span>"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid ""
+"<strong class=\"text-center\">Scan me with your banking app.</strong>\n"
+"                            <br/>\n"
+"                            <br/>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid ""
+"<strong class=\"text-center\">The SEPA QR Code informations are not set correctly.</strong>\n"
+"                            <br/>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "<strong style=\"color: #212529\">Subtotal</strong>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "<strong style=\"color: #212529\">Total</strong>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.label_qr_fabrication_lot_imei_mac_template_view_pdf
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.label_qr_fabrication_lot_imei_template_view_pdf
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.label_qr_fabrication_lot_mac_template_view_pdf
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.label_report_packaging_template_view_pdf
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_stock_packaging_and_qr_pdf
+msgid "Barcode"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Cancelled Invoice"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Credit Note"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Customer Code:"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_report_gst_lvl_reports_report_label_qr_fabrication_lot__display_name
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_report_gst_lvl_reports_report_label_report_packaging__display_name
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_report_gst_lvl_reports_report_sotck_packaging_and_qr__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Draft Invoice"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.actions.report,name:gst_lvl_reports.report_label_qr_fabrication_lot_imei
+msgid "Etiqueta QR IMEI"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.actions.report,name:gst_lvl_reports.report_label_qr_fabrication_lot_imei_plus_mac
+msgid "Etiqueta QR IMEI mas MAC"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.actions.report,name:gst_lvl_reports.report_label_qr_fabrication_lot_mac
+msgid "Etiqueta QR MAC"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.actions.report,name:gst_lvl_reports.report_account_move_komobi
+msgid "Factura cliente Komobi"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model,name:gst_lvl_reports.model_report_gst_lvl_reports_report_label_report_packaging
+msgid "Generate label for the packaging in the stock picking outs"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_report_gst_lvl_reports_report_label_qr_fabrication_lot__id
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_report_gst_lvl_reports_report_label_report_packaging__id
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_report_gst_lvl_reports_report_sotck_packaging_and_qr__id
+msgid "ID"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.label_report_packaging_template_view_pdf
+msgid "IMEI:"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Invoice Date:"
+msgstr "Date de facture:"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Invoice number:"
+msgstr "Numero de Facture:"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.external_layout_standard_2
+msgid "KOMOBI MOTO"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_report_gst_lvl_reports_report_label_qr_fabrication_lot____last_update
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_report_gst_lvl_reports_report_label_report_packaging____last_update
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_report_gst_lvl_reports_report_sotck_packaging_and_qr____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.external_layout_standard_2
+msgid "Logo"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.label_report_packaging_template_view_pdf
+msgid "MAC:"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_sale_order__miputocampo
+msgid "Miputocampo"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_product_product__tradename
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_product_template__tradename
+msgid "Nombre comercial"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Order number:"
+msgstr "Numero de Commande:"
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.external_layout_standard_2
+msgid ""
+"Page:\n"
+"                    <span class=\"page\"/>\n"
+"                    /\n"
+"                    <span class=\"topage\"/>"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model.fields,field_description:gst_lvl_reports.field_stock_picking__product_lot
+msgid "Product Lot"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.actions.report,name:gst_lvl_reports.report_label_report_packaging
+msgid "Product Packaging"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.actions.report,name:gst_lvl_reports.report_label_report_stock_packaging_and_qr
+msgid "Product Packaging and QR"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model,name:gst_lvl_reports.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Reference:"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model,name:gst_lvl_reports.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.label_report_packaging_template_view_pdf
+msgid "Serial No."
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.view_picking_form_inherit_serial_numbers
+msgid "Serial Number"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Tax ID"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model,name:gst_lvl_reports.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Vendor Bill"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.report_invoice_document_2
+msgid "Vendor Credit Note"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model,name:gst_lvl_reports.model_report_gst_lvl_reports_report_label_qr_fabrication_lot
+msgid "generate label with qr codes representing the imei or the mac as appropriate to the device in question"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.gst_lvl_report_mail_notification_paynow_inherit
+msgid "info@komobimoto.com"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model:ir.model,name:gst_lvl_reports.model_report_gst_lvl_reports_report_sotck_packaging_and_qr
+msgid "report.gst_lvl_reports.report_sotck_packaging_and_qr"
+msgstr ""
+
+#. module: gst_lvl_reports
+#: model_terms:ir.ui.view,arch_db:gst_lvl_reports.gst_lvl_report_mail_notification_paynow_inherit
+msgid "www.komobimoto.com"
+msgstr ""

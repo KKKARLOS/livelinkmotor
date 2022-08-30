@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view -->
+    <record id="view_services_tree" model="ir.ui.view">
+        <field name="name">view.services.tree</field>
+        <field name="model">services</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="view_services_form" model="ir.ui.view">
+        <field name="name">view.services.form</field>
+        <field name="model">services</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                       <field name="name" placeholder="Nombre" required="True"/>
+                    </h1>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gst_lvl_catalog.services_view">
+        <field name="name">Catalogo Servicios</field>
+        <field name="res_model">services</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Catalogo Servicios" parent="sale.product_menu_catalog"
+              sequence="10" id="lunch_services_menu"
+              action="gst_lvl_catalog.services_view" />
+
+</odoo>

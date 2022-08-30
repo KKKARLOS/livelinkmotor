@@ -1,0 +1,41 @@
+<odoo>
+  <data>
+    <!-- Tree View -->
+    <record model="ir.ui.view" id="view_history_tree">
+      <field name="name">view.history.tree</field>
+      <field name="model">history</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="imei_mac"/>
+          <field name="albaran"/>
+          <field name="fecha"/>
+          <field name="order"/>
+          <field name="activo"/>
+        </tree>
+      </field>
+    </record>
+
+      <!-- Form View -->
+    <record model="ir.ui.view" id="view_history_form">
+      <field name="name">view.history.form</field>
+      <field name="model">history</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                 <field name="imei_mac"/>
+                  <field name="albaran"/>
+              </group>
+              <group>
+                <field name="fecha"/>
+                <field name="activo"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

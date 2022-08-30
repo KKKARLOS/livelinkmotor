@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+       <menuitem id="aws_connector_root" name="AWS Connector" sequence="10"
+            groups="gst_lvl_connector_aws.group_aws_user" />
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="aws_device" name="Device" parent="aws_connector_root" sequence="10"
+            action="gst_lvl_connector_aws.action_aws_device"/>
+        <menuitem id="aws_key" name="Key" parent="aws_connector_root" sequence="20"
+            action="gst_lvl_connector_aws.action_aws_key"/>
+        <menuitem id="aws_partner" name="Partner" parent="aws_connector_root" sequence="30"
+            action="gst_lvl_connector_aws.action_partner_aws_device"/>
+        <menuitem id="aws_device_history" name="Device History" parent="aws_connector_root" sequence="40"
+            action="gst_lvl_connector_aws.action_aws_history"/>
+        <menuitem id="aws_device_test" name="Device Test" parent="aws_connector_root" sequence="50"
+            action="gst_lvl_connector_aws.action_aws_device_test"/>
+        <menuitem id="aws_firmware" name="Firmware" parent="aws_connector_root" sequence="60"
+            action="gst_lvl_connector_aws.action_aws_firmware"/>
+    </data>
+</odoo>

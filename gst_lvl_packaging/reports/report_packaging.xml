@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="label_report_packaging_template_view_pdf_new">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-set="imei" t-value="0"/>
+                <t t-set="mac" t-value="0"/>
+                <t t-set="serial_no" t-value="prueba"/>
+                <t t-foreach="docs" t-as="work">
+                    <t t-if="work.last_finished_lot_id">
+                    <t t-set="imei" t-value="work.last_finished_lot_id.consumed_imei.name"/>
+                    <t t-set="mac" t-value="work.last_finished_lot_id.consumed_key.name"/>
+<!--
+                        <t t-foreach="work.check_ids" t-as="check_id">
+                            <t t-set="imei" t-value="check_id.get_imei()"/>
+                            <t t-set="mac" t-value="check_id.get_mac()"/>
+                        </t>
+-->                            
+                            <t t-set="serial_no" t-value="work.last_finished_lot_id.name if work.last_finished_lot_id else 'serial_no not defined'"/>
+                    </t>
+                </t>
+
+                <div style="font-size: 55px; margin: 0 !important; padding: 0 !important">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p><span><strong>KOMOBI</strong></span></p>
+                                    <p style="margin: 0 !important; padding: 0px !important;"><span>Designed by Komobi Moto</span></p>
+                                    <p style="margin: 0 !important; padding: 0px !important;"><span>Assembled in Spain</span></p>
+                                    <p>MAC:<span t-esc="mac"/></p>
+                                    <div class="imagen-codigo-barras-1">
+                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', imei, 800, 180)"
+                                             style="display:inline-block; margin: 20px 0 0 -100px; padding: 0; text-align: left; width: 100%;"
+                                             alt="Barcode"/>
+                                    </div>
+                                    <p>IMEI:<span t-esc="imei"/></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-12 imagen-codigo-barras-2" style="margin: 1rem !important; padding: 3rem 0 !important">
+                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', serial_no, 800, 300)"
+                                         style="display:block; margin: 0 0 30px -70px; padding: 0; width: 115%;"
+                                         alt="Barcode"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center" style="margin: 1rem 0 0">
+                                    <p><span t-field='docs.product_id.language'/> - Serial No. <span t-esc="serial_no"/></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

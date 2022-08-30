@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+     <record id="paperformat_rieju" model="report.paperformat">
+        <field name="name">Report Label RIEJU Paperformat</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">14</field>
+        <field name="page_width">62</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">300</field>
+    </record>
+
+    <report id="report_label_rieju"
+            model="stock.production.lot"
+            string="RIEJU"
+            name="gst_lvl_packaging.label_print_rieju"
+            file="gst_lvl_packaging.label_print_rieju"
+            report_type="qweb-pdf"
+            paperformat="paperformat_serial_number"
+    />
+
+
+     <record id="paperformat_serial_number" model="report.paperformat">
+        <field name="name">Report Label serial number Paperformat again</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">11</field>
+        <field name="page_width">50</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">300</field>
+    </record>
+
+    <report id="report_label_serial_number_again"
+            model="quality.check"
+            string="PACKSOY"
+            name="gst_lvl_packaging.label_print_serial_number_again"
+            file="gst_lvl_packaging.label_print_serial_number_again"
+            report_type="qweb-pdf"
+            paperformat="paperformat_serial_number"
+    />
+
+</odoo>
+

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_livelink_quotation_tree">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="is_processed" />
+                </field>
+            </field>
+        </record>  
+
+        <record model="ir.ui.view" id="view_livelink_order_tree">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="is_processed" />
+                </field>
+            </field>
+        </record>   
+
+        <record model="ir.ui.view" id="view_livelink_sale_order_form">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <field name="payment_term_id" position="after">
+                    <field name="is_dealer" widget="boolean_toggle"/>
+                    <field name="is_processed" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

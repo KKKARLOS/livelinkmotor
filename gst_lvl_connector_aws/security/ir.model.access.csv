@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_aws_device,AWS device,model_aws_device,base.group_user,1,1,1,1
+access_aws_key,AWS key,model_aws_key,base.group_user,1,1,1,1
+access_aws_device_history,AWS device_history,model_aws_device_history,base.group_user,1,1,1,1
+access_aws_device_test,AWS device_test,model_aws_device_test,base.group_user,1,1,1,1
+access_aws_device_iccid,AWS device_iccid,model_aws_device_iccid,base.group_user,1,1,1,1
+access_aws_firmware,AWS firmware,model_aws_firmware,base.group_user,1,1,1,1
+access_aws_brand,AWS brand,model_aws_brand,base.group_user,1,1,1,1
+access_aws_model,AWS model,model_aws_model,base.group_user,1,1,1,1
+access_aws_device_suscripcions,AWS device_suscripcions,model_aws_device_suscripcions,base.group_user,1,1,1,1
+

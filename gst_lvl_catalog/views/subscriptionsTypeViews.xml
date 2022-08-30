@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view -->
+    <record id="view_master_subscription_type_tree" model="ir.ui.view">
+        <field name="name">view.master.subscription.type.tree</field>
+        <field name="model">subscription.type</field>
+        <field name="arch" type="xml">
+                 <tree string="Tipos Subscripciones">
+                     <field name="name"/>
+                     <field name="identificador"/>
+                </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="view_subscription_type_form" model="ir.ui.view">
+        <field name="name">view.subscription.type.form</field>
+        <field name="model">subscription.type</field>
+        <field name="arch" type="xml">
+            <form string="Tipos Subscripciones">
+                <sheet>
+                    <group>
+                        <group string="Nombre">
+                            <h1><field name="name" required="1">Nombre</field></h1>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="identificador"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Catalogo suscripciones" name="catalogo_subs">
+                            <field name="catalog_subs"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gst_lvl_catalog.subscription_type_view">
+        <field name="name">Tipo de Suscripcion</field>
+        <field name="res_model">subscription.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Tipo de Subscripciones" parent="sale.product_menu_catalog"
+              sequence="10" id="lunch_subscriptions_type_menu"
+              action="gst_lvl_catalog.subscription_type_view" />
+
+
+</odoo>

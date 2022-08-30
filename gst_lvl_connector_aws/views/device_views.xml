@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="device_view_form" model="ir.ui.view">
+           <field name="name">device.view.form</field>
+           <field name="model">aws.device</field>
+           <field name="arch" type="xml">
+               <form string="Device">
+                   <header>
+                        <field name="state" widget="statusbar"/>
+                   </header>
+                   <sheet>
+                       <group>
+                           <group>
+                               <field name="name"/>
+                               <field name="devicePcbId"/>
+                               <field name="iccid"/>
+                               <field name="status"/>
+                               <field name="app_type"/>
+                               <field name="subscription_time"/>
+                           </group>
+                           <group>
+                               <field name="firmware_id"/>
+                               <field name="partner_id"/>
+                               <field name="assembledOn"/>
+                               <field name="imei_id" groups='base.group_system' context="{'default_company_id': allowed_company_ids[0]}"/>
+                               <field name="icc_id" groups='base.group_system'/>
+                               <field name="product_id"/>
+                           </group>
+                       </group>
+                       <notebook>
+                            <page name="tests" string="Tests">
+                                <group>
+                                    <field name="device_test_ids" nolabel="1">
+                                        <tree multi_edit="1">
+                                            <field name="name"/>
+                                            <field name="device_id"/>
+                                            <field name="testedOn"/>
+                                            <field name="testCaseId"/>
+                                            <field name="GPRS" optional="show"/>
+                                            <field name="FTPS" optional="show"/>
+                                            <field name="GPS" optional="show"/>
+                                            <field name="IMU" optional="show"/>
+                                            <field name="iccid" optional="show"/>
+                                            <field name="memory" optional="show"/>
+                                            <field name="battery" optional="show"/>
+                                            <field name="scoreGPRS" string="sGPRS(%)" optional="hide"/>
+                                            <field name="scoreFTPS" string="sFTPS(%)" optional="hide"/>
+                                            <field name="scoreGPS" string="sGPS(%)" optional="hide"/>
+                                            <field name="scoreIMU" string="sIMU(%)" optional="hide"/>
+                                            <field name="iccidScore" string="sICCId(%)" optional="hide"/>
+                                            <field name="scoreMemory" string="sMem(%)" optional="hide"/>
+                                            <field name="scoreBattery" string="sBat(%)" optional="hide"/>
+                                            <field name="totalScore" string="Total(%)"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="history" string="History">
+                                <group>
+                                    <field name="history_ids" nolabel="1"/>
+                                </group>
+                            </page>
+                           <page name="suscripcions" string="Suscripcions">
+                                <group>
+                                    <field name="suscripcions_ids" nolabel="1">
+                                    <tree>
+                                        <field name="create_date"/>
+                                        <field name="code"/>
+                                        <field name="num_months"/>
+                                    </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+        <record id="device_view_tree" model="ir.ui.view">
+            <field name="name">device.view.tree</field>
+            <field name="model">aws.device</field>
+            <field name="arch" type="xml">
+                <tree string="Device" decoration-danger="status != 'OK'" decoration-warning="failed_qa_test == True">
+                    <field name="name"/>
+                    <field name="devicePcbId"/>
+                    <field name="iccid"/>
+                    <field name="status"/>
+                    <field name="firmware_id"/>
+                    <field name="partner_id"/>
+                    <field name="failed_qa_test" invisible='1'/>
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+    <record id="device_view_search" model="ir.ui.view">
+            <field name="name">device.view.search</field>
+            <field name="model">aws.device</field>
+            <field name="arch" type="xml">
+                <search string="Search Device">
+                    <field string="IMEI" name="name"/>
+                    <field string="PCBid" name="devicePcbId"/>
+                    <field string="ICCid" name="iccid"/>
+                </search>
+            </field>
+        </record>
+
+    <record id="action_aws_device" model="ir.actions.act_window">
+        <field name="name">Device</field>
+        <field name="res_model">aws.device</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="device_view_tree"/>
+        <field name="domain"></field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No devices to show.
+            </p>
+        </field>
+    </record>
+
+    </data>
+</odoo>

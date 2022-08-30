@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="paperformat_livelink_report_packaging" model="report.paperformat">
+        <field name="name">Report Packaging Paperformat</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">62</field>
+        <field name="page_width">26</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">2</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">600</field>
+    </record>
+
+    <report id="report_label_report_packaging"
+            model="stock.picking"
+            string="Product Packaging"
+            name="gst_lvl_reports.label_report_packaging_template_view_pdf"
+            file="gst_lvl_reports.label_report_packaging_template_view_pdf"
+            report_type="qweb-pdf"
+            paperformat="paperformat_livelink_report_packaging"
+    />
+
+</odoo>

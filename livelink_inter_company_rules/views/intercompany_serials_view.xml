@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_intercompany_production_virtual_lot_tree" model="ir.ui.view">
+            <field name="name">stock.production.virtual.lot.tree</field>
+            <field name="model">stock.production.virtual.lot</field>
+            <field name="arch" type="xml">
+                <tree string="Lots/Serial Numbers" editable="bottom"
+                        decoration-muted="state == 'created'"
+                        decoration-info="state == 'confirmed'"
+                        decoration-warning="state == 'unconfirmed'">
+                    <field name="name"/>
+                    <field name="product_id" invisible='1'/>
+                    <field name="intercompany_move_id" invisible='1'/>
+                    <field name="intercompany_ext_sale_id" invisible='1'/>
+                    <field name="intercompany_ext_lot_id" invisible='1'/>
+                    <field name="intercompany_move_line_id" invisible='1'/>
+                    <field name="state" readonly='1' force_save='1'/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_serial_intercompany_moves" model="ir.actions.act_window">
+            <field name="name">Received serial numbers</field>
+            <field name="res_model">stock.production.virtual.lot</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_intercompany_production_virtual_lot_tree"/>
+        <!--
+            <field name="context">{'default_intercompany_move_id': 'new'}</field>
+            <field name="domain">[('type', '=', 'out_invoice')]</field>
+            <field name="search_view_id" ref="view_account_invoice_filter"/>
+        -->
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create received serial numbers
+              </p><p>
+                Create serial number from another company.
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

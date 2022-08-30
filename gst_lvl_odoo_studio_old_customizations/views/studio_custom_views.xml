@@ -1,0 +1,360 @@
+<odoo>
+  <data>
+    <record id="odoo_studio_hr_emplo_b3614ff6-27f2-4ac8-8e9a-7e8ec743267f" model="ir.ui.view">
+        <field name="name">Odoo Studio: hr.employee.form customization</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='visa_no']" position="replace"/>
+          <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_information']/group[1]/group[4]"
+                 position="replace"/>
+          <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_information']/group[1]/group[3]"
+                 position="replace">
+            <attribute name="name">x_studio_iban</attribute>
+          </xpath>
+          <xpath expr="//field[@name='country_of_birth']" position="replace"/>
+          <xpath expr="//field[@name='identification_id']"
+                 position="attributes">
+            <attribute name="attrs">{}</attribute>
+            <attribute name="required">1</attribute>
+            <attribute name="string">DNI</attribute>
+          </xpath>
+          <xpath expr="//field[@name='passport_id']" position="attributes">
+            <attribute name="attrs">{}</attribute>
+            <attribute name="string">Nº Seg. Social</attribute>
+          </xpath>
+          <xpath expr="//group[@name='work_permit']" position="attributes">
+            <attribute name="string">Datos bancarios</attribute>
+          </xpath>
+          <xpath expr="//field[@name='permit_no']" position="attributes">
+            <attribute name="string">IBAN</attribute>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_mrp_prod_d735638f-af9b-4e9c-bc99-391aed72170f" model="ir.ui.view">
+        <field name="name">Odoo Studio: mrp.production.form customization</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='origin']" position="after">
+            <field name="x_studio_producto" string="Producto"/>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_mrp_prod_4d7b4e4b-9a07-40d3-ae4b-1c9a9447605a" model="ir.ui.view">
+        <field name="name">Odoo Studio: mrp.production.tree customization</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='product_id']" position="after">
+            <field name="x_studio_producto"/>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_mrp_work_680dc678-2622-4b17-98d1-56a61af0151e" model="ir.ui.view">
+        <field name="name">Odoo Studio: mrp.workcenter.form customization</field>
+        <field name="model">mrp.workcenter</field>
+        <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+            <page name="studio_page_78gjh" string="Rutas de producción">
+              <group name="studio_group_78gjh">
+                <group name="studio_group_78gjh_left">
+                  <field name="x_studio_field_h2z6u"/>
+                </group>
+                <group name="studio_group_78gjh_right"/>
+              </group>
+            </page>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_purchase_5558d241-4c0b-4970-8911-313e11cf20e9" model="ir.ui.view">
+        <field name="name">Odoo Studio: purchase.order.form customization</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='date_order']" position="after">
+            <field name="x_studio_clasificacin_compras"
+                   string="Clasificación compras"
+                   help="Seleccionar el tipo de producto que se está comprando para su posterior clasificación"/>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_purchase_109f258b-313b-4782-a42d-9a3488ba0138" model="ir.ui.view">
+      <field name="name">Odoo Studio: purchase.order.tree customization</field>
+      <field name="model">purchase.order</field>
+      <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+      <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='origin']" position="replace"/>
+        <xpath expr="//field[@name='date_planned']" position="replace"/>
+        <xpath expr="//field[@name='partner_id']" position="after">
+          <field name="x_studio_clasificacin_compras"/>
+        </xpath>
+
+      </field>
+    </record>
+
+    <record id="odoo_studio_res_comp_e9581ea4-b872-4b3d-94c6-6b3140a51ec0" model="ir.ui.view">
+        <field name="name">Odoo Studio: res.company.form customization</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//form[1]/sheet[1]/div[1]" position="after">
+            <field name="x_studio_logo_marca_1"
+                   options="{&quot;size&quot;: [0, 90]}" widget="image"
+                   string="logo_marca"/>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_sale_ord_a0822ce3-a9bc-419d-a41e-03550479ae14" model="ir.ui.view">
+        <field name="name">Odoo Studio: sale.order.form customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='payment_term_id']" position="after">
+            <field name="x_studio_correo_electrnico"
+                   string="Correo electrónico"/>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_sale_ord_c25d40b9-30e0-46e7-9daa-03b9fa847397" model="ir.ui.view">
+        <field name="name">Odoo Studio: sale.order.tree customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='commitment_date']" position="replace"/>
+          <xpath expr="//field[@name='expected_date']" position="after">
+            <field name="effective_date"/>
+          </xpath>
+          <xpath expr="//field[@name='partner_id']" position="after">
+            <field name="x_studio_correo_electrnico"/>
+            <field name="partner_shipping_id"/>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_stock_mo_8ce8d296-93be-4ab0-a184-c87efc443660" model="ir.ui.view">
+        <field name="name">Odoo Studio: stock.move.line.tree customization</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='lot_id']" position="after">
+            <field name="x_studio_num_serial" string="Num Serial"/>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_stock_pi_04f23cc6-b699-4184-9bf1-0339be84b047" model="ir.ui.view">
+        <field name="name">Odoo Studio: stock.picking.tree customization</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='partner_id']" position="after">
+            <field name="product_lot"/>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_stock_pr_803ead90-8f30-4165-b14d-09e37444dfb5" model="ir.ui.view">
+        <field name="name">Odoo Studio: stock.production.lot.tree customization</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='ref']" position="replace">
+            <field name="product_qty"/>
+          </xpath>
+
+        </field>
+    </record>
+
+    <record id="odoo_studio_stock_qu_714fe55c-441c-43c9-a4bb-7643fa022d09" model="ir.ui.view">
+        <field name="name">Odoo Studio: stock.quant.tree customization</field>
+        <field name="model">stock.quant</field>
+        <field name="inherit_id" ref="stock.view_stock_quant_tree"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='owner_id']" position="replace"/>
+          <xpath expr="//field[@name='package_id']" position="replace"/>
+          <xpath expr="//field[@name='location_id']" position="after">
+            <field name="in_date"/>
+          </xpath>
+
+        </field>
+    </record>
+
+      <record id="operaciones_dcdb1cce-2b4d-4920-9693-c56d5e2a881d" model="ir.actions.act_window">
+          <field name="name">Operaciones</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">mrp.routing.workcenter</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <menuitem id="fabricacion_operacio_0199336c-c3e7-421d-8616-de38ad553d35"
+                name="Operaciones"
+                parent="mrp.menu_mrp_bom"
+                action="operaciones_dcdb1cce-2b4d-4920-9693-c56d5e2a881d"
+                sequence="20"/>
+
+      <record id="product_data_queue_l_44252d61-f535-40a2-84a5-1745ab641262" model="ir.actions.act_window">
+          <field name="name">Product Data Queue Line</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">woo.product.data.queue.line.ept</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <menuitem id="woocommerce_product__4baeca41-3c01-4faf-bacc-0cec299132da"
+                name="Product Data Queue Line"
+                parent="woo_commerce_ept.woo_data_queue_menu"
+                action="product_data_queue_l_44252d61-f535-40a2-84a5-1745ab641262"
+                sequence="1"/>
+
+    <record id="default_graph_view_f_15f02535-3f97-48fb-9034-4f0a64a843ad" model="ir.ui.view">
+        <field name="name">Default graph view for hr.employee</field>
+        <field name="model">hr.employee</field>
+        <field name="arch" type="xml">
+            <graph string="Employee">
+                <field name="name" modifiers="{}"/>
+            </graph>
+        </field>
+    </record>
+
+      <template id="odoo_studio_report_i_59bee4a8-00c4-437a-a5da-6c6cc6133f9b "
+                inherit_id="account.report_invoice_document_with_payments"
+                primary="True">
+          <xpath expr="/t/t/div/h2" position="before">
+              <img class="img-fluid"
+                   src="/web/image/2174/imagotipo-gris%2Bverde.png"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-right:20px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-right:150px"
+                         remove="margin-right:20px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-right:1500px"
+                         remove="margin-right:150px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";"
+                         remove="margin-right:1500px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-left:1500px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-left:150px"
+                         remove="margin-left:1500px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-left:300px"
+                         remove="margin-left:150px"/>
+          </xpath>
+          <xpath expr="/t/t/t[2]/div[1]" position="attributes">
+              <attribute name="style" separator=";" add="margin-top:-50px"/>
+          </xpath>
+          <xpath expr="/t/t/t[2]/div[1]" position="attributes">
+              <attribute name="style" separator=";" add="margin-top:-100px"
+                         remove="margin-top:-50px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-top:-200px"/>
+          </xpath>
+          <xpath expr="/t[1]/t[1]/div[1]/img[1]" position="replace"/>
+          <xpath expr="/t/t/div/h2" position="before">
+              <img class="img-fluid"
+                   src="/web/image/2178/imagotipo-gris%2Bverde.png"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-left:-400px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-left:-300px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-left:300px"
+                         remove="margin-left:-400px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-left:-200px"
+                         remove="margin-left:-300px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-left:400px"
+                         remove="margin-left:-300px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-left:500px"
+                         remove="margin-left:-300px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-left:600px"
+                         remove="margin-left:-300px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-bottom:400px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";"
+                         remove="margin-bottom:400px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-top:-100px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-top:-200px"
+                         remove="margin-top:-100px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-top:-300px"
+                         remove="margin-top:-200px"/>
+          </xpath>
+          <xpath expr="/t/t/div/img" position="attributes">
+              <attribute name="style" separator=";" add="margin-top:-250px"
+                         remove="margin-top:-300px"/>
+          </xpath>
+          <xpath expr="/t[1]/t[1]/div[1]/img[1]" position="replace"/>
+          <xpath expr="/t/t/div/h2/span[1]" position="attributes">
+              <attribute name="style" separator=";" add="margin-top:300px"/>
+          </xpath>
+          <xpath expr="/t/t/div/h2/span[1]" position="attributes">
+              <attribute name="style" separator=";" add="margin-top:500px"
+                         remove="margin-top:300px"/>
+          </xpath>
+          <xpath expr="/t/t/div/h2/span[1]" position="attributes">
+              <attribute name="style" separator=";" remove="margin-top:500px"/>
+          </xpath>
+      </template>
+
+  </data>
+</odoo>

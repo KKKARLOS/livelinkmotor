@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="partner_view_form" model="ir.ui.view">
+           <field name="name">partner.view.form</field>
+           <field name="model">res.partner</field>
+           <field name="inherit_id" ref="base.view_partner_form"/>
+           <field name="arch" type="xml">
+               <xpath expr="//notebook[last()]" position="inside">
+                   <page name="aws_devices" string="AES Devices">
+                       <group>
+                           <group>
+                               <field name="ref"/>
+                               <field name="brand"/>
+                               <field name="model"/>
+                           </group>
+                           <group>
+                               <field name="type"/>
+                               <field name="currentKM"/>
+                           </group>
+                       </group>
+                       <notebook>
+                           <page name="devices" string="Devices">
+                               <group>
+                                   <field name="device_ids" nolabel="1"/>
+                               </group>
+                           </page>
+                       </notebook>
+                   </page>
+               </xpath>
+           </field>
+       </record>
+
+        <record id="partner_view_tree" model="ir.ui.view">
+            <field name="name">partner.view.tree</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Partner">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="ref"/>
+                    <field name="brand"/>
+                    <field name="model"/>
+                    <field name="type"/>
+                    <field name="currentKM"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="action_partner_aws_device" model="ir.actions.act_window">
+        <field name="name">Partner</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="partner_view_tree"/>
+        <field name="domain"></field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No partner to show.
+            </p>
+        </field>
+    </record>
+
+    </data>
+</odoo>

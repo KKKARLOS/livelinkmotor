@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="aws_subscription_view_form" model="ir.ui.view">
+           <field name="name">aws.subscription.history.view.form</field>
+           <field name="model">aws.subscription.history</field>
+           <field name="arch" type="xml">
+               <form string="Subscription">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet >
+                        <group>
+                            <group>
+                                <field name="imei"/>
+                                <field name="email"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <field name="registration_date"/>
+                                <field name="lot_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+               </form>
+           </field>
+       </record>
+
+        <record id="aws_subscription_view_tree" model="ir.ui.view">
+            <field name="name">aws.subscription.history.view.tree</field>
+            <field name="model">aws.subscription.history</field>
+            <field name="arch" type="xml">
+                <tree string="Subscription" create="0" delete="0"  editable="bottom"
+                        decoration-warning="state == 'in_progress'"
+                        decoration-info="state == 'validated'"
+                        decoration-muted="state == 'open'">
+                    <field name="registration_date"/>
+                    <field name="imei"/>
+                    <field name="serial_id"/>
+                    <field name="email"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_aws_subscription" model="ir.actions.act_window">
+            <field name="name">AWS Subscription</field>
+            <field name="res_model">aws.subscription.history</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="aws_subscription_view_tree"/>
+            <field name="domain"></field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No AWS Subscription History to show.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_aws_subscription" name="Subscription"
+            parent="gst_lvl_connector_aws.aws_connector_root"
+            action="action_aws_subscription" sequence="160"/>
+
+    </data>
+</odoo>

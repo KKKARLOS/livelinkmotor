@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="paperformat_livelink_label_qr_fabrication_lot" model="report.paperformat">
+        <field name="name">Report Label Qr Paperformat</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">15</field>
+        <field name="page_width">15</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">300</field>
+    </record>
+
+     <record id="paperformat_livelink_label_qr_imei_mac_picking" model="report.paperformat">
+        <field name="name">Report Label Qr Imei plus mac Paperformat</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">25</field>
+        <field name="page_width">25</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">2</field>
+        <field name="margin_bottom">2</field>
+        <field name="margin_left">2</field>
+        <field name="margin_right">2</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">300</field>
+    </record>
+
+    <report id="report_label_qr_fabrication_lot_imei"
+            model="stock.production.lot"
+            string="Etiqueta QR IMEI"
+            name="gst_lvl_reports.label_qr_fabrication_lot_imei_template_view_pdf"
+            file="gst_lvl_reports.label_qr_fabrication_lot_imei_template_view_pdf"
+            report_type="qweb-pdf"
+            paperformat="paperformat_livelink_label_qr_fabrication_lot"
+    />
+
+    <report id="report_label_qr_fabrication_lot_mac"
+            model="stock.production.lot"
+            string="Etiqueta QR MAC"
+            name="gst_lvl_reports.label_qr_fabrication_lot_mac_template_view_pdf"
+            file="gst_lvl_reports.label_qr_fabrication_lot_mac_template_view_pdf"
+            report_type="qweb-pdf"
+            paperformat="paperformat_livelink_label_qr_fabrication_lot"
+    />
+
+    <report id="report_label_qr_fabrication_lot_imei_plus_mac"
+            model="stock.picking"
+            string="Etiqueta QR IMEI mas MAC"
+            name="gst_lvl_reports.label_qr_fabrication_lot_imei_mac_template_view_pdf"
+            file="gst_lvl_reports.label_qr_fabrication_lot_imei_mac_template_view_pdf"
+            report_type="qweb-pdf"
+            paperformat="paperformat_livelink_label_qr_imei_mac_picking"
+    />
+
+
+</odoo>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view-->
+    <record id="view_subscription_tree" model="ir.ui.view">
+        <field name="name">view.subscription.tree</field>
+        <field name="model">subscription</field>
+        <field name="arch" type="xml">
+                 <tree string="Subscripciones">
+                    <field name="name"/>
+                    <field name="fecha_activacion"/>
+                    <field name="fecha_desactivacion"/>
+                </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="view_subscription_form" model="ir.ui.view">
+        <field name="name">view.subscription.form</field>
+        <field name="model">subscription</field>
+        <field name="arch" type="xml">
+        <form string="Subscripciones">
+            <sheet>
+                <group>
+                    <group string="Nombre">
+                        <h1><field name="name" required="1"/></h1>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="products_ids"/>
+                         <field name="catalog_ids"/>
+                    </group>
+                    <group>
+                        <field name="fecha_activacion"/>
+                        <field name="fecha_desactivacion" />
+                    </group>
+                </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_subscription_o2m_form" model="ir.ui.view">
+        <field name="name">view.subscription.o2m.form</field>
+        <field name="model">subscription</field>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+        <form string="Subscripciones">
+            <sheet>
+                <group>
+                    <group string="Nombre">
+                        <h1><field name="name" required="1"/></h1>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                         <field name="catalog_ids"/>
+                    </group>
+                    <group>
+                        <field name="fecha_activacion"/>
+                        <field name="fecha_desactivacion" />
+                    </group>
+                </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+
+   <record model="ir.actions.act_window" id="gst_lvl_catalog.subscription_view">
+        <field name="name">Suscripcion</field>
+        <field name="res_model">subscription</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Subscripciones" parent="sale.product_menu_catalog" id="lunch_subscriptions_menu" action="gst_lvl_catalog.subscription_view" />
+
+
+</odoo>

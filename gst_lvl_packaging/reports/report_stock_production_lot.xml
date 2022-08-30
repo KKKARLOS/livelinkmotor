@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+     <template id="label_qr_fabrication_lot_imei_mac_template_view_pdf_new">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-set="imei" t-value="0"/>
+                <t t-set="mac" t-value="0"/>
+                <t t-set="gna" t-value="0"/>
+                <t t-foreach="docs" t-as="work">
+                    <t t-set="imei" t-value="work.get_imei()"/>
+                    <t t-set="mac" t-value="work.get_mac()"/>
+                    <t t-if="work.is_rieju and 'RIEJU' in work.product_id.name">
+                        <t t-set="gna" t-value="work.finished_lot_id and work.finished_lot_id.name or 'Unkown'"/>
+                    </t>
+                </t>
+                <t t-if="imei and mac">
+                    <t t-set="imei_plus_mac" t-value="imei+';'+mac"/>
+                </t>
+                <t t-if="imei and not mac">
+                    <t t-set="imei_plus_mac" t-value="imei+';'"/>
+                </t>
+
+                <t t-if="not imei and mac">
+                    <t t-set="imei_plus_mac" t-value="';'+mac"/>
+                </t>
+
+                <t t-if="gna">
+                    <t t-set="imei_plus_mac" t-value="gna"/>
+                </t>
+
+                <div class="row">
+                    <div class="col-12" style="margin: 0; padding: 0;">
+                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', imei_plus_mac, 370,370)" style="margin: 2px !important;" alt="Barcode"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

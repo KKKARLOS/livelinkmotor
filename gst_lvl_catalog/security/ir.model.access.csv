@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_catalog_subscription,gst_lvl_catalog.catalog_subscription,model_catalog_subscription,base.group_user,1,1,1,1
+access_subscription_type,gst_lvl_catalog.subscription_type,model_subscription_type,base.group_user,1,1,1,1
+acceso_subscripciones,gst_lvl_catalog.subscription,model_subscription,base.group_user,1,1,1,1
+acceso_services,gst_lvl_catalog.services,model_services,base.group_user,1,1,1,1

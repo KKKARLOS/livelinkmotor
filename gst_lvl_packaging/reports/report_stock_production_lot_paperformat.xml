@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+     <record id="paperformat_livelink_label_qr_imei_mac_picking_new" model="report.paperformat">
+        <field name="name">Report Label Qr Imei plus mac Paperformat</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">25</field>
+        <field name="page_width">25</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">2</field>
+        <field name="margin_bottom">2</field>
+        <field name="margin_left">2</field>
+        <field name="margin_right">2</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">300</field>
+    </record>
+
+    <report id="report_label_qr_fabrication_lot_imei_plus_mac_new"
+            model="mrp.workorder"
+            string="Last QR IMEI + MAC "
+            name="gst_lvl_packaging.label_qr_fabrication_lot_imei_mac_template_view_pdf_new"
+            file="gst_lvl_packaging.label_qr_fabrication_lot_imei_mac_template_view_pdf_new"
+            report_type="qweb-pdf"
+            paperformat="paperformat_livelink_label_qr_imei_mac_picking_new"
+    />
+
+</odoo>

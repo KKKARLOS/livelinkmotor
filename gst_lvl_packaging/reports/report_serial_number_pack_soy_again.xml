@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+     <template id="label_print_serial_number_again">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="row">
+                    <div class="col-12">
+                        <p t-field="docs.finished_lot_id" style="margin: auto !important; text-align: center; font-size: 100px;"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+     <template id="label_print_rieju">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="row">
+                    <div class="col-12" style="margin: auto !important; text-align: center;height:100%">
+                        <t t-foreach="docs" t-as="lot">
+                            <br/>
+                            <r style="height:40%; font-size: 30px;">
+                                <span>SERIAL NUMBER: </span><span t-esc="lot.name"/>
+                            </r><br/>
+                            <r style="height:30%; font-size: 25px;">
+                                <span>IMEI: </span>
+                                <t t-if="lot.consumed_imei">
+                                    <span t-esc="lot.consumed_imei.name"/>
+                                </t>
+                            </r><br/>
+                            <r style="height:30%; font-size: 25px;">
+                                <span>MAC: </span>
+                                <t t-if="lot.consumed_key"> 
+                                    <span t-esc="lot.consumed_key.name"/>
+                                </t>
+                            </r>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

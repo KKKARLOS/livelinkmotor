@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate='0'>
+
+    <!-- UPDATE -->
+        <record id="hr_leave_type_holidays" model="hr.leave.type">
+            <field name="name">Holidays</field>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="allocation_type">fixed</field>
+            <field name="code">VAC</field>
+        </record>
+
+    </data>
+</odoo>
